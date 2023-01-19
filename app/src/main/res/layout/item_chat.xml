@@ -11,7 +11,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingHorizontal="10dp"
         >
 
     <LinearLayout
@@ -63,9 +62,10 @@
         />
     </LinearLayout>
     <View
+        android:id="@+id/line"
         android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="#DCDCDC"
+        android:layout_height="1dp"
+        android:background="#272727"
         android:layout_marginTop="10dp"/>
 
 

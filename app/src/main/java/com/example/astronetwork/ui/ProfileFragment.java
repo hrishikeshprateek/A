@@ -27,6 +27,8 @@ public class ProfileFragment extends AppCompatActivity {
         rv_astro = findViewById(R.id.rv_astro);
         rv_chat = findViewById(R.id.rv_chat);
 
+        findViewById(R.id.back).setOnClickListener(r->finish());
+
         List<String> list = new ArrayList<>();
         list.add("User Name");
         list.add("User Name");

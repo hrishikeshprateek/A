@@ -30,7 +30,9 @@ public class ProfileChatAdapter extends RecyclerView.Adapter<ProfileChatAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-
+        if (position == getItemCount() -1) {
+            holder.back.setVisibility(View.GONE);
+        }else holder.back.setVisibility(View.VISIBLE);
     }
 
     @Override
@@ -40,8 +42,11 @@ public class ProfileChatAdapter extends RecyclerView.Adapter<ProfileChatAdapter.
 
     class ViewHolder extends RecyclerView.ViewHolder{
 
+        private View back;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            back = itemView.findViewById(R.id.line);
         }
     }
 }
