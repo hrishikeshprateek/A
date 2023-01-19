@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -13,29 +14,26 @@ import com.example.astronetwork.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProfileFragment extends Fragment {
+public class ProfileFragment extends AppCompatActivity {
 
     RecyclerView rv_astro,rv_chat;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.fragment_profile);
 
-        View root = inflater.inflate(R.layout.fragment_profile,container,false);
 
-
-
-        rv_astro = root.findViewById(R.id.rv_astro);
-        rv_chat = root.findViewById(R.id.rv_chat);
+        rv_astro = findViewById(R.id.rv_astro);
+        rv_chat = findViewById(R.id.rv_chat);
 
         List<String> list = new ArrayList<>();
         list.add("User Name");
         list.add("User Name");
         list.add("User Name");
 
-        rv_astro.setAdapter(new ProfilePersonAdapter(getContext(),list));
-        rv_chat.setAdapter(new ProfileChatAdapter(getContext(),list));
+        rv_astro.setAdapter(new ProfilePersonAdapter(this,list));
+        rv_chat.setAdapter(new ProfileChatAdapter(this,list));
 
-
-        return root;
     }
 }

@@ -11,7 +11,7 @@
         android:label="Astronetwork"
         tools:layout="@layout/fragment_home" />
 
-    <fragment
+    <activity
         android:id="@+id/nav_gallery"
         android:name="com.example.astronetwork.ui.ProfileFragment"
         android:label="Astronetwork"

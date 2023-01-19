@@ -35,10 +35,11 @@
 
     </LinearLayout>
     <androidx.appcompat.widget.AppCompatRatingBar
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         style="@style/Widget.AppCompat.RatingBar.Small"
         android:numStars="5"
+        android:max="5"
         android:layout_marginTop="10dp"
         />
     <TextView

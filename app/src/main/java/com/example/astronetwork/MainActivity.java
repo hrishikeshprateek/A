@@ -1,5 +1,6 @@
 package com.example.astronetwork;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -7,6 +8,7 @@ import android.view.Menu;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.example.astronetwork.ui.ProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
@@ -50,12 +52,12 @@ public class MainActivity extends AppCompatActivity {
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home,
-                R.id.nav_gallery,
                 R.id.nav_slideshow)
                 .setDrawerLayout(drawer)//setOpenableLayout
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
+
         NavigationUI.setupWithNavController(navigationView, navController);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(menuItem -> {
@@ -63,9 +65,8 @@ public class MainActivity extends AppCompatActivity {
                 navController.navigate(R.id.nav_home);
             }else if (menuItem.getItemId() == R.id.nav_store){
                 Toast.makeText(MainActivity.this,"Demo",Toast.LENGTH_SHORT).show();
-                //navController.navigate(R.id.nav_store);
             }else if (menuItem.getItemId() == R.id.nav_account){
-                navController.navigate(R.id.nav_gallery);
+                startActivity(new Intent(this, ProfileFragment.class));
             }
             return false;
         });
